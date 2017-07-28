@@ -8,7 +8,10 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "uglify": "uglifyjs -c -m --ecma 6 dist/e2ee.js -o dist/e2ee.min.js",
+    "clean": "rm dist/e2ee*",
+    "dist": "npm run clean && npm run webpack && npm run uglify"
   },
   "repository": {
     "type": "git",
@@ -21,10 +24,12 @@
   },
   "homepage": "https://github.com/danibix95/E2EE#readme",
   "dependencies": {
+    "base64-js": "^1.2.1",
     "superagent": "^3.5.2",
     "superagent-binary-parser": "^1.0.1"
   },
   "devDependencies": {
+    "uglify-es": "^3.0.26",
     "webpack": "^3.3.0"
   }
 }
