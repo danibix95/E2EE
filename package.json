@@ -11,7 +11,8 @@
     "webpack": "webpack",
     "uglify": "uglifyjs -c -m --ecma 6 dist/e2ee.js -o dist/e2ee.min.js --source-map",
     "clean-dist": "rm -rf dist",
-    "dist": "npm run clean-dist && mkdir -p dist && npm run webpack && npm run uglify"
+    "dist": "npm run clean-dist && mkdir -p dist && npm run webpack && npm run uglify && npm run docs",
+    "docs": "rm -rf docs && node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
   },
   "repository": {
     "type": "git",
@@ -30,7 +31,9 @@
     "superagent-binary-parser": "^1.0.1"
   },
   "devDependencies": {
-    "uglify-es": "^3.0.26",
+    "jsdoc": "^3.5.3",
+    "minami": "^1.2.3",
+    "uglify-es": "^3.0.27",
     "webpack": "^3.4.1"
   }
 }

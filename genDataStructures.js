@@ -139,7 +139,7 @@ const sbm = {
         indexed: true
       },
       {
-        name: "sender_id",
+        name: "writer_id",
         type: "string"
       }
     ]
@@ -165,7 +165,7 @@ const sbf = {
         indexed: true
       },
       {
-        name: "sender_id",
+        name: "uploader_id",
         type: "string"
       }
     ]
