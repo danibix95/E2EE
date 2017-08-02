@@ -8,8 +8,8 @@
 const API = require("./lib/api_connect");
 
 const auth = {
-  id: process.env.CHINO_ID,
-  secret: process.env.CHINO_KEY
+  id    : process.env.CHINO_ID,   // change with your Chino Customer ID
+  secret: process.env.CHINO_KEY   // change with your Chino Customer Key
 }
 
 const appData = {
@@ -107,6 +107,7 @@ const sbox = {
   }
 }
 
+/* Needs to be created dynamically when a new SBox document is created */
 const ks = {
   description: "SBox Keys",
   structure: {
@@ -134,7 +135,8 @@ const sbm = {
       },
       {
         name: "written_on",
-        type: "date"
+        type: "datetime",
+        indexed: true
       },
       {
         name: "sender_id",
@@ -159,7 +161,8 @@ const sbf = {
       },
       {
         name: "uploaded_on",
-        type: "date"
+        type: "datetime",
+        indexed: true
       },
       {
         name: "sender_id",
