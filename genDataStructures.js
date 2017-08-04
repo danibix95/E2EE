@@ -67,18 +67,18 @@ const pubKeys = {
 }
 
 const usbox = {
-  "description": "User SBoxes",
-  "structure": {
-    "fields": [
+  description: "User SBoxes",
+  structure: {
+    fields: [
       {
-        "name": "user_id",
-        "type": "string",
-        "indexed": true
+        name: "user_id",
+        type: "string",
+        indexed: true
       },
       {
-        "name": "sbox_id",
-        "type": "string",
-        "indexed": true
+        name: "sbox_id",
+        type: "string",
+        indexed: true
       }
     ]
   }
