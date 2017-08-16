@@ -31,9 +31,9 @@
     "superagent-binary-parser": "^1.0.1"
   },
   "devDependencies": {
-    "jsdoc": "^3.5.3",
+    "jsdoc": "^3.5.4",
     "minami": "^1.2.3",
     "uglify-es": "^3.0.27",
-    "webpack": "^3.4.1"
+    "webpack": "^3.5.4"
   }
 }

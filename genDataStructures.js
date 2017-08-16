@@ -176,6 +176,18 @@ const sbf = {
       {
         name: "uploader_id",
         type: "string"
+      },
+      {
+        name: "file_iv",
+        type: "base64"
+      },
+      {
+        name: "file_hash",
+        type: "base64"
+      },
+      {
+        name: "ad",
+        type: "json"
       }
     ]
   }
