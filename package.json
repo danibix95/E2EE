@@ -1,0 +1,39 @@
+{
+  "name": "e2ee",
+  "version": "0.0.1",
+  "description": "Client-side library for providing a end to end encryption service using Chino API",
+  "main": "sdk.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack",
+    "uglify": "uglifyjs -c -m --ecma 6 dist/e2ee.js -o dist/e2ee.min.js --source-map",
+    "clean-dist": "rm -rf dist",
+    "dist": "npm run clean-dist && mkdir -p dist && npm run webpack && npm run uglify && npm run docs",
+    "docs": "rm -rf docs && node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danibix95/E2EE.git"
+  },
+  "author": "Daniele Bissoli",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danibix95/E2EE/issues"
+  },
+  "homepage": "https://github.com/danibix95/E2EE#readme",
+  "dependencies": {
+    "base64-js": "^1.2.1",
+    "private-parts": "^0.4.1",
+    "superagent": "^3.5.2",
+    "superagent-binary-parser": "^1.0.1"
+  },
+  "devDependencies": {
+    "jsdoc": "^3.5.4",
+    "minami": "^1.2.3",
+    "uglify-es": "^3.0.27",
+    "webpack": "^3.5.4"
+  }
+}
