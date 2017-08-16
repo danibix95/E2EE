@@ -94,7 +94,7 @@ const sbox = {
         indexed: true
       },
       {
-        name: "messages",
+        name: "documents",
         type: "string",
         indexed: true
       },
@@ -107,87 +107,6 @@ const sbox = {
         name: "group_id",
         type: "string",
         indexed: true
-      }
-    ]
-  }
-}
-
-/* Needs to be created dynamically when a new SBox document is created */
-const ks = {
-  description: "SBox Keys",
-  structure: {
-    fields: [
-      {
-        name: "user_id",
-        type: "string",
-        indexed: true
-      },
-      {
-        name: "enc_ck",
-        type: "base64"
-      }
-    ]
-  }
-}
-
-const sbm = {
-  description: "SBox Documents",
-  structure: {
-    fields: [
-      {
-        name: "enc_doc",
-        type: "base64",
-      },
-      {
-        name: "written_on",
-        type: "datetime",
-        indexed: true
-      },
-      {
-        name: "writer_id",
-        type: "string"
-      },
-      {
-        name: "ad",
-        type: "json"
-      }
-    ]
-  }
-}
-
-const sbf = {
-  description: "SBox Files",
-  structure: {
-    fields: [
-      {
-        name: "enc_file",
-        type: "blob",
-      },
-      {
-        name: "blob_id",
-        type: "string",
-        indexed: true
-      },
-      {
-        name: "uploaded_on",
-        type: "datetime",
-        indexed: true
-      },
-      {
-        name: "uploader_id",
-        type: "string"
-      },
-      {
-        name: "file_iv",
-        type: "base64"
-      },
-      {
-        name: "file_hash",
-        type: "base64"
-      },
-      {
-        name: "ad",
-        type: "json"
       }
     ]
   }
@@ -272,9 +191,6 @@ function uploadStructure() {
         .then(() => API.post(`/repositories/${otherId}/schemas`, usbox, auth))
         .then((r) => {console.log(r); return API.post(`/repositories/${otherId}/schemas`, pubKeys, auth)})
         .then((r) => {console.log(r); return API.post(`/repositories/${dataId}/schemas`, sbox, auth)})
-        .then((r) => {console.log(r); return API.post(`/repositories/${dataId}/schemas`, ks, auth)})
-        .then((r) => {console.log(r); return API.post(`/repositories/${dataId}/schemas`, sbm, auth)})
-        .then((r) => {console.log(r); return API.post(`/repositories/${dataId}/schemas`, sbf, auth)})
   ])
       .then(() => console.log("\nNeeded data structures successfully created on Chino server"))
       .catch((e) => {console.error(e)});
