@@ -104,7 +104,7 @@ const sbox = {
         indexed: true
       },
       {
-        name: "group_id",
+        name: "group",
         type: "string",
         indexed: true
       }
