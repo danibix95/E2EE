@@ -30,6 +30,12 @@ describe("End To End Encryption Library Test", function() {
   const username = `daniele${new Date().getTime()}`;
   let user1;
 
+  // doc to be inserted into SBox
+  const doc = {
+    title: "My first message",
+    content: "This is an important message!"
+  }
+
   describe("User class - Part 1", function () {
     beforeEach(function (done) {
       // wait enough time that things are ready to be searched
@@ -61,7 +67,14 @@ describe("End To End Encryption Library Test", function() {
             result.should.be.instanceof(Number);
             result.should.be.above(0);
           })
-          .catch((e) => {console.log(e); throw new Error(e)})
+    });
+
+    it("Username Search", function() {
+      return User.search(username)
+          .then((result) => {
+            result.should.be.instanceof(String);
+            result.should.be.equal(user1.userId);
+          })
     });
 
     it("Create SBox", function() {
@@ -74,18 +87,22 @@ describe("End To End Encryption Library Test", function() {
 
   describe("SBox class", function () {
     it("Insert document", function() {
-      return new Promise((resolve, reject) => resolve(1));
+      return sbox.insert(user1, doc, {})
+          .then((result) => {
+            should.be.equal(true);
+          })
 
     });
 
     it("Insert file", function() {
       return new Promise((resolve, reject) => resolve(1));
-
     });
 
     it("Read document", function() {
-      return new Promise((resolve, reject) => resolve(1));
+      return sbox.retrieve(user1)
+          .then((result) => {
 
+          });
     });
 
     it("Read file", function() {
