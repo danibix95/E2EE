@@ -3,13 +3,13 @@
 // WARNIGN: place here your settings
 const client = window.E2EE(
 {
-  sboxRepo: 'a61a29dd-7e74-4de4-9931-2b4d26a52add',
-  sboxSchema: '50d1023f-5916-43a1-ba5a-971396ead338',
-  keysSchema: '31c53733-cef9-4b96-9f17-bcef92ff86a6',
-  linkSchema: '4a1a5c04-1a96-46ce-adb9-a0d5e596d27b',
-  keysGroup: '309377e5-cb52-40c3-9e1e-555412865f1d',
-  userSchema: '7e25e444-9ef3-4e3a-ae90-e24f37348273',
-  appId: 'BUik3M8hO8dSc0hBSf6sNaxXUbmzSW4nukVVsxY5'
+  sboxRepo: 'd11cea37-6b9e-4682-a1e2-287f8de008da',
+  sboxSchema: 'd7c994f7-d031-4798-b502-fe8da627e9ac',
+  keysSchema: '9c437599-0dd3-4704-92fd-bb03a4cf442a',
+  linkSchema: 'ec0a58ca-4a58-4b2e-af8c-a11cd74ae5f4',
+  keysGroup: '35b028ab-8ea5-4355-927c-59766d56cbd8',
+  userSchema: '9df83b1e-3cb8-4e58-8174-86301fa94eef',
+  appId: 'mJnU4JNhzChHocdGIJbNYd6fLqhTPKuvynY3lGoz'
 }
 )
 
@@ -98,10 +98,13 @@ describe("End To End Encryption Library Test", function() {
     });
 
     it("Get user's SBox", function () {
-      user1.sboxesId.should.be.instanceof(Iterable);
-      user1.sboxesId.length.should.be.above(0);
+      console.log(user1.sboxesId)
+      user1.sboxesId.should.be.instanceof(Object);
+      const sboxId = user1.sboxesId.next().value;
+      should.exists(sboxId); // at least one element
 
-      sbox1 = user1.getSBox(user1.sboxesId[0]);
+      sbox1 = user1.getSBox(sboxId);
+      should.exists(sbox1);
     });
   });
 
