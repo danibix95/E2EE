@@ -7,6 +7,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'e2ee.js',
     libraryTarget: 'window',
-    library: 'SBOX'
+    library: 'E2EE'
   }
 };
