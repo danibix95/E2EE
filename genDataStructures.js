@@ -249,8 +249,8 @@ function uploadStructure() {
             API.post(
                 `/perms/grant/groups/groups/${options.keysGroup}`,
                 {
-                  manage : ["C", "R", "D"],
-                  authorize : ["C", "R", "D", "A"]
+                  manage : ["C", "D"],
+                  authorize : ["C", "D", "A"]
                 },
                 auth
             )
@@ -259,8 +259,8 @@ function uploadStructure() {
             API.post(
                 `/perms/grant/repositories/${options.sboxRepo}/schemas/groups/${options.keysGroup}`,
                 {
-                  manage : ["C", "U", "R", "D", "L"],
-                  authorize : ["C", "U", "R", "D", "L", "A"]
+                  manage : ["C", "D", "L"],
+                  authorize : ["C", "D", "L", "A"]
                 },
                 auth
             )
