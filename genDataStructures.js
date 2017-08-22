@@ -270,11 +270,7 @@ function uploadStructure() {
                 `/perms/grant/schemas/${options.sboxSchema}/documents/groups/${options.keysGroup}`,
                 {
                   manage : ["C", "R", "D", "S", "L"],
-                  authorize : ["C", "R", "D", "S", "L", "A"],
-                  created_document: {
-                    manage : ["R", "D"],
-                    authorize : ["R", "D", "A"]
-                  }
+                  authorize : ["C", "R", "D", "S", "L", "A"]
                 },
                 auth
             )
