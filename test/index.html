@@ -12,12 +12,12 @@
 </head>
 <body>
   <div id="control">
-    <button type="button" id="runTests">Run tests</button>
-    <input type="file" id="file">
+    <button type="button" id="runTests" disabled>Run tests</button>
+    <input type="file" id="file" autofocus>
   </div>
   <div id="mocha"></div>
 
-  <script src="../dist/e2ee.min.js" type="text/javascript"></script>
+  <script src="../dist/e2ee.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.5.0/mocha.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/should.js/11.2.1/should.min.js"></script>
 
@@ -28,6 +28,11 @@
     });
 
     let fileToUpload = document.getElementById("file").files;
+    document.getElementById("file").addEventListener("change", () => {
+      fileToUpload = document.getElementById("file").files;
+      document.getElementById("runTests").disabled = false;
+      document.getElementById("runTests").focus();
+    });
   </script>
   <script src="test.e2ee.js"></script>
   <script>

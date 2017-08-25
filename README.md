@@ -16,7 +16,7 @@ And enter inside project folder
 
 Then edit the following two files and insert your Chino Customer credentials:
 
-- [genDataStructures.js (L12)](https://github.com/danibix95/E2EE/blob/dev/genDataStructures.js#L12)
+- [genDataStructures.js (L13)](https://github.com/danibix95/E2EE/blob/dev/genDataStructures.js#L13)
 
       const auth = {
           id    : <CHINO_ID>,   // change with your Chino Customer ID
