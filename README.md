@@ -22,12 +22,7 @@ Then edit the following two files and insert your Chino Customer credentials:
           id    : <CHINO_ID>,   // change with your Chino Customer ID
           secret: <CHINO_KEY>   // change with your Chino Customer Key
       }
-- [test/test.e2.ee.js (L17)](https://github.com/danibix95/E2EE/blob/master/test/test.e2ee.js#L17)
-
-      const credentials = {
-        id: <CHINO_ID>,         // change with your Chino Customer ID
-        secret: <CHINO_KEY>     // change with your Chino Customer Key
-      }
+      
 Now it is possible to initialize the environment.  
 **Warning:** genDataStructure script will delete everything you have on your Chino space.
 
@@ -49,4 +44,4 @@ Example of output from `genDataStructure`:
     
 It needs to be copied in [test/test.e2.ee.js (L6-12)](https://github.com/danibix95/E2EE/blob/master/test/test.e2ee.js#L6-L12)
 
-Finally it is possible to test the library. Open `test/index.html` in your browser (*Google Chrome or Firefox is preferred for working with Web Crypto API*), select the file `test/data.txt` from file chooser e press the button `Run tests` for starting testing the library.
+Finally it is possible to test the library. Open `test/index.html` in your browser (*Google Chrome or Firefox is preferred for working with Web Crypto API*), insert your Chino ID and your Chino Key, then select the file `test/data.txt` from file chooser and press the button `Run tests` for starting testing the library.
