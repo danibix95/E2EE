@@ -4,7 +4,7 @@ Client-side library for providing a end to end encryption service using Chino AP
 
 ## How to test this repository
 
-Requirements: [Node.js](https://nodejs.org), you can use [NVM](https://github.com/creationix/nvm/blob/master/README.md) to install it.
+Requirements: [Node.js](https://nodejs.org), you can use [NVM](https://github.com/creationix/nvm/blob/master/README.md) to install it. Supported Node versions >= v7.1.0
 
 Clone the repository:
 
@@ -49,4 +49,4 @@ Example of output from `genDataStructure`:
     
 It needs to be copied in [test/test.e2.ee.js (L6-12)](https://github.com/danibix95/E2EE/blob/master/test/test.e2ee.js#L6-L12)
 
-Finally it is possible to test the library. Open in your browser (*Google Chrome or Firefox is preferred for working with Web Crypto API*), select the file `test/data.txt` from file chooser e press the button `Run tests` for starting testing the library.
+Finally it is possible to test the library. Open `test/index.html` in your browser (*Google Chrome or Firefox is preferred for working with Web Crypto API*), select the file `test/data.txt` from file chooser e press the button `Run tests` for starting testing the library.

@@ -12,8 +12,15 @@
 </head>
 <body>
   <div id="control">
+    <div>
+    <input type="text" id="chino_id" placeholder="CHINO ID" size="40" required autocomplete="on">
+    <input type="text" id="chino_key" placeholder="CHINO KEY" size="40" required autocomplete="on">
+    </div>
+    <div>
     <button type="button" id="runTests" disabled>Run tests</button>
     <input type="file" id="file" autofocus>
+
+    </div>
   </div>
   <div id="mocha"></div>
 
@@ -33,6 +40,19 @@
       document.getElementById("runTests").disabled = false;
       document.getElementById("runTests").focus();
     });
+
+    let credentials = {
+      id: document.getElementById("chino_id").value,
+      secret: document.getElementById("chino_key").value
+    }
+
+    document.getElementById("chino_id").addEventListener("change", (e) => {
+      credentials.id = document.getElementById("chino_id").value;
+    });
+    document.getElementById("chino_key").addEventListener("change", (e) => {
+      credentials.secret = document.getElementById("chino_key").value;
+    });
+
   </script>
   <script src="test.e2ee.js"></script>
   <script>
