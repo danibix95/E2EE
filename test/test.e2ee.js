@@ -3,21 +3,15 @@
 // WARNIGN: place here your settings
 const client = window.E2EE(
 {
-  sboxRepo: 'b6ee5c10-f1d0-4857-aefe-116fe4a07456',
-  sboxSchema: '7aced12c-f420-457a-84a5-eb422a08c113',
-  keysSchema: 'ed4f9a8a-e89c-4cdb-a24b-d673ca6ea34d',
-  linkSchema: '6017116a-5aaf-43b3-94fa-6b9dd23e70b1',
-  keysGroup: 'ad9ded95-66ab-471b-8e5b-4847a3297a79',
-  userSchema: '995eeb15-f2d8-4ab2-9edd-5bd915104d49',
-  appId: 'vsusJvTVr4nraAWrCAYk3eXOujUHWOIgzPUACn0h'
+  sboxRepo: '09776831-274d-486a-a1d0-e0f36dbd44ee',
+  sboxSchema: '463c2cd0-c52b-4cb9-8804-a05611c4d6de',
+  keysSchema: '500f2d11-c0bf-42ef-86cf-5c9df0305435',
+  linkSchema: '304c18dc-613e-4899-96dc-89aed1f903b4',
+  keysGroup: '9adf4253-4169-4db6-ac04-8621c3b1842d',
+  userSchema: '337f85a1-ca80-4b33-bdff-146bf72d05b5',
+  appId: 'eLpJLhjXcKpUkB9wtNEvLlVPppRUapuAD0VOetJk'
 }
 )
-
-// place here your customer credentials for testing user management
-const credentials = {
-  id: "",
-  secret: ""
-}
 
 describe("End To End Encryption Library Test", function() {
   this.slow(300);
@@ -131,10 +125,15 @@ describe("End To End Encryption Library Test", function() {
     });
 
     it("Grant permissions", function () {
-      return sbox1.grantAccess(user1, secondUser)
-          .then((result) => {
-            result.should.be.equal(true);
-          });
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve();
+        }, 800);
+      })
+      .then(() => sbox1.grantAccess(user1, secondUser))
+      .then((result) => {
+        result.should.be.equal(true);
+      });
     });
   });
 
@@ -185,7 +184,7 @@ describe("End To End Encryption Library Test", function() {
           });
     });
 
-    it("Retrieves all the SBox files", function () {
+    it.skip("Retrieves all the SBox files", function () {
       this.timeout(10000);
       return sbox1.retrieveFiles(user2)
           .then((result) => {
@@ -231,7 +230,7 @@ describe("End To End Encryption Library Test", function() {
           .then((result) => { result.should.be.equal(true); });
     });
 
-    it("Delete file", function() {
+    it.skip("Delete file", function() {
       return sbox1.removeFile(file1, user1)
           .then((result) => { result.should.be.equal(true); });
     });

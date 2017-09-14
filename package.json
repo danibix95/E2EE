@@ -27,13 +27,13 @@
   "dependencies": {
     "base64-js": "^1.2.1",
     "private-parts": "^0.4.1",
-    "superagent": "^3.5.2"
+    "superagent": "^3.6.0"
   },
   "devDependencies": {
     "jsdoc": "^3.5.4",
     "minami": "^1.2.3",
     "should": "^11.2.1",
-    "uglify-es": "^3.0.27",
+    "uglify-es": "^3.0.28",
     "webpack": "^3.5.5"
   }
 }
